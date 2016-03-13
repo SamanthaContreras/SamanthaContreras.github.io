@@ -242,6 +242,7 @@ section article {
 
 section > article > h3 {
 	font-size: 23px;
+	font-weight: lighter;
 }
 
 section article:last-child{
