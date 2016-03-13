@@ -98,7 +98,7 @@ main > article > header h2 {
 
 main > article > p{
 	float: left;
-	width: 65%;
+	width: 66%;
 	margin-right: 0px;
 	padding-bottom: 10px;
 }
@@ -161,7 +161,7 @@ main > footer > q {
 /* ------- Aside --------- */
 aside {
 	float:right;
-	width: 280px;
+	width: 30%;
 	margin-left: 20px;
 }
 
