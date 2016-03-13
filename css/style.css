@@ -160,7 +160,7 @@ main > footer > q {
 
 /* ------- Aside --------- */
 aside {
-	float:left;
+	float:right;
 	width: 280px;
 	margin-left: 20px;
 }
@@ -216,7 +216,7 @@ section {
 	display: block;
 	clear: right;
 	width: 100%;
-
+	margin-bottom: 30px;
 }
 
 hr {
@@ -241,7 +241,7 @@ section article {
 }
 
 section > article > h3 {
-	font-size: 25px;
+	font-size: 23px;
 }
 
 section article:last-child{
