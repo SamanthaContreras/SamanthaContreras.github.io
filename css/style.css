@@ -73,9 +73,9 @@ nav a:hover {
 /* ---------Main-------- */
 main {
 	display: block;
-	width: 80%;
+	width: 70%;
 	margin: 30px;
-	margin-left: 10%;
+	margin-left: 15%;
 	margin-right: 10%;
 }
 
@@ -98,7 +98,7 @@ main > article > header h2 {
 
 main > article > p{
 	float: left;
-	width: 69%;
+	width: 65%;
 	margin-right: 0px;
 	padding-bottom: 10px;
 }
@@ -117,7 +117,7 @@ main > footer {
 	clear: left;
 	float: left;
 	width: 70%;
-	height: 120px;
+	height: 30%;
 	margin-right: 0;
 	padding: 0;
 	border-top: solid gray 1px;
@@ -160,9 +160,9 @@ main > footer > q {
 
 /* ------- Aside --------- */
 aside {
-	float:right;
-	width: 27%;
-	margin-left: 0;
+	float:left;
+	width: 280px;
+	margin-left: 20px;
 }
 
 aside > article {
