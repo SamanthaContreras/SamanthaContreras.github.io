@@ -15,6 +15,11 @@ body {
 
 /*-------- Encabezado --------*/
 #header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
 	height: 70px;
 	margin: 0;
 	background-color: white;
@@ -87,7 +92,7 @@ nav > ul li a:hover {
 /* ---------Main-------- */
 main {
 	width: 890px;
-	margin: 50px auto;
+	margin: 100px auto;
 }
 
 #date {
