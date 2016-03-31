@@ -13,39 +13,66 @@ body {
 }
 
 
+
+/*---------- General ---------*/
+.button{
+	float: right;
+	margin: 0;
+	background-color: #0099CC;;
+	border: none;
+	padding: 10px 25px;
+	color: white;
+	border-radius: 4px;
+	font-size: 20px;
+	font-family: helvetica;
+	font-weight: lighter;
+}
+
+.button:hover {
+	background-color: #D8D8D8;
+	color: black;
+}
+
+hr {
+	clear: left;
+	border: 0;
+	height: 1px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0,0,0,0));
+	/*background-image: linear-gradient(to right, #ccc, #333, #ccc);*/
+}
+
 /*-------- Encabezado --------*/
 #header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 9999;
+	z-index: 99999;
 	height: 70px;
-	margin: 0;
 	background-color: white;
-	box-shadow: 0px 1px 6px gray;
+	box-shadow: 0px 1px 15px #BDBDBD;
 }
 
 #header header {
-	width: 890px;
+	width: 1000px;
 	margin: auto;
 }
 
-#header h1 {
+h1 {
 	float: left;
-	margin: 14.25px 15px 0 0px;
+	margin: 14.25px 35px 0 0px;
 	color: #0099CC;
 	font-size: 35px;
 }
 
-#header h1 > span {
+h1 span {
 	font-size: 33px;
 	color: black;
 	font-family: helvetica;
 }
 
 nav {
-	width: 637px;
+	width: 720px;
 	height: 70px;
 	float: left;
 }
@@ -70,29 +97,35 @@ nav > ul > li a {
 	text-decoration: none;
 	text-align: center;
 	color: black;
-
+	transition: all 0.15s;
 }
 
-nav > ul li a:hover {
+nav > ul li a:hover:not(.active):not(.icon) {
+	transition: all 0.15s;
 	background-color: #0099CC;
 	color: white;
 }
 
-.icon {
+nav .icon {
 	padding: 0px 8px;
 	margin: 0;
 	color: black;
 }
 
-.icon:hover {
+nav .icon:hover {
 	background-color: white;
+	color: black;
+}
+
+nav .active {
+	background-color: #D8D8D8;
 	color: black;
 }
 
 /* ---------Main-------- */
 main {
-	width: 890px;
-	margin: 100px auto;
+	width: 1000px;
+	margin: 120px auto;
 }
 
 #date {
@@ -102,21 +135,22 @@ main {
 	color: gray;
 }
 
-.tk-fira-sans-2 {
-	font-weight: lighter;
+#principalA {
+	float: left;
+	width: 680px;
 }
 
-main > article > header h2 {
+main > header h2 {
 	margin-top: 0;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 	font-size: 55px;
 	font-family: helvetica;
 	font-weight: lighter;
 }
 
-main > article > p{
+#principalA > p{
 	float: left;
-	width: 66%;
+	width: 680px;
 	margin-right: 0px;
 	padding-bottom: 10px;
 }
@@ -130,18 +164,17 @@ main article img {
 	border-radius: 5px;
 }
 
-main > footer {
-	display: block;
-	clear: left;
+#aFooter {
+	width: 100%;
 	float: left;
-	width: 70%;
 	height: 30%;
 	margin-right: 0;
+	margin-bottom: 10px;
 	padding: 0;
-	border-top: solid gray 1px;
+	background-color: #F2F2F2;
 }
 
-main > footer img {
+#aFooter img {
 	float: left;
 	width: 12%;
 	margin: 20px;
@@ -150,7 +183,7 @@ main > footer img {
 	vertical-align: middle;
 }
 
-main > footer > p{
+#aFooter > p{
 	float: left;
 	padding-top: 5px;
 	font-size: 18px;
@@ -158,7 +191,7 @@ main > footer > p{
 	font-weight: lighter;
 }
 
-main > footer > p > span {
+#aFooter > p > span {
 	color:gray;
 }
 
@@ -167,7 +200,7 @@ main > footer > p > span {
 	font-size: 12px;
 }
 
-main > footer > q {
+#aFooter > q {
 	float: left;
 	margin: 40px;
 	margin-left: 50px;
@@ -178,12 +211,13 @@ main > footer > q {
 
 /* ------- Aside --------- */
 aside {
+	position: relative;
 	float:right;
-	width: 30%;
+	width: 300px;
 	margin-left: 20px;
 }
 
-aside > article {
+aside > article, .asideSection {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
 	padding: 3px 20px 10px 20px;
 	margin: 10px;
@@ -191,11 +225,11 @@ aside > article {
 	margin-bottom: 12%;
 	font-size: 15px;
 	background-color: #F0F0F0;
-	color: black;
 	text-align: justify;
+	transition: all 0.5s ease;
 }
 
-aside > article > a h3 {
+aside article h3, .asideSection h3  {
 	font-size: 20px;
 	font-weight: lighter;
 	text-align: left;
@@ -211,12 +245,12 @@ aside > article img {
 	border-radius: 5px;
 }
 
-aside > article:hover{
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.06);
-	color: black;
+aside > article:hover, .asideSection:hover{
+	transition: all 0.5s ease;
+	box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-aside > article > a {
+aside > article > a, .asideSection > a {
 	text-decoration: none;
 	color: black;
 }
@@ -229,17 +263,16 @@ aside > h3 {
 	font-family: helvetica;
 } 
 
+#twitter {
+	padding: 0;
+}
+
 /* -------- Section ------- */
 section {
 	display: block;
 	clear: right;
 	width: 100%;
 	margin-bottom: 30px;
-}
-
-hr {
-	display: block;
-	clear: left;
 }
 
 section > h3 {
@@ -250,7 +283,7 @@ section > h3 {
 	font-size: 30px;
 } 
 
-section article {
+section > article {
 	float: left;
 	width: 30%;
 	text-align: justify;
@@ -278,20 +311,121 @@ section a:hover{
 	color: orange;
 }
 
+section article:hover {
+	transition: all 0.5s ease;
+	box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.25);
+}
+
 /* --------- Footer --------- */
 
 body > footer {
 	display: block;
 	clear:left;
-	height: 100px;
+	height: 130px;
 	margin-top: 40px;
 	margin-bottom: 0;
 	text-align: center;
-	background-color: black;
+	background-color: #D8D8D8;
 	padding: 40px;
 	padding-bottom: 20px;
-	color: white;
+}
+
+#footer {
+	width: 1000px;
+	margin: auto;
+}
+
+#footer p {
+	line-height: 300%;
+	text-align: left;
+	color: black;
 	font-family: helvetica;
 	font-weight: lighter;
-	font-size: 17px;
+	font-size: 16px;
+}
+
+#footer h1, #footer h1 >span {
+	display: inline;
+	margin: auto;
+	color: gray;
+}
+
+#footer h1 {
+	margin: 0 25px 20px 0;
+}
+
+footer ul {
+	list-style-type: none;
+}
+
+footer li {
+	display: inline;
+	margin: 20px 0;
+}
+
+footer .icon{
+	color: gray;
+	padding: 20px 15px;
+	margin: 20px 0;
+}
+
+table, th, td {
+	border-collapse: collapse;
+}
+
+.table {
+	margin: 0;
+	width: 100%;
+	border: 0px;
+	padding: 0px;
+	font-family: helvetica;
+	font-weight: lighter;
+}
+
+.table th {
+	background-color: #F2F2F2;
+	padding: 20px 0;
+}
+
+.table td {
+	margin: 0;
+	padding: 0 5px;
+	border: dashed gray 1px;
+	border-top: none;
+	text-align: center;
+}
+
+form {
+	width: 630px;
+	margin-bottom: 50px;
+	color: black;
+	padding: 20px 5px;
+	font-family: helvetica;
+	font-size: 20px;
+	font-weight: lighter;
+	border-top: solid gray 1px;
+}
+
+form input[type="text"], input[type="email"], textarea {
+	color: #555;
+	height: 40px;
+	width: 630px;
+	margin: 2px 6px 16px 0px;
+	outline: 0 none;
+	padding: 0 5px;
+	font-size: 20px;
+	font-weight: lighter;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+form textarea{
+	min-height: 250px;
+	padding-top: 5px;
+	resize: vertical;
+}
+
+form input[type="submit"] {
+	cursor: pointer;
 }
